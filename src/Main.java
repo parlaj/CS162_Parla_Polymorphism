@@ -12,13 +12,13 @@ public class Main {
         ProductManager productManager = new ProductManager("Carlos", 50000, 8, 5);
         //System.out.println(productManager.toString());
         System.out.println();
-        Boss boss = new Boss("Jeff", 50000, 12, 10);
+        Owner boss = new Owner("Jeff");
+        boss.hireEmployee(technicalWriter);
+        boss.hireEmployee(engineer);
+        boss.hireEmployee(productManager);
 
-        ArrayList<Employee> employeeList = new ArrayList<Employee>();
-        employeeList.add(technicalWriter);
-        employeeList.add(engineer);
-        employeeList.add(productManager);
-        for (Employee employee : employeeList) {
+
+        for (Employee employee : boss.getEmployeeList()) {
             if(employee instanceof Engineer){
                 boss.giveRaise(employee, .25);
             }
